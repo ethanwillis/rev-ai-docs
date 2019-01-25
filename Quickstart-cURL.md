@@ -51,9 +51,23 @@ $ curl -X POST "https://api.rev.ai/revspeech/v1beta/jobs" \
 
 ```
 
+After sending this request to the API you will get a response body with the following format:
+
+```json
+{
+    "id": "111111",
+    "created_on": "2019-01-25T20:40:03.49Z",
+    "metadata": "This is a sample submit jobs option",
+    "media_url": "https://support.rev.com/hc/en-us/article_attachments/200043975/FTC_Sample_1_-_Single.mp3",
+    "status": "in_progress"
+}
+```
+
+
+
 #### Placing a new job order - Media from a local file
 
-If instead you have a file on your local machine that you would like to be processed you can use cURL with the -f flag. 
+If instead you have a file on your local machine that you would like to be processed you can use cURL with the -f flag. Replace /path/to/media_file.mp3 with the location of the file on your local computer that you would like to send.
 
 ```shell
 $ curl -X POST "https://api.rev.ai/revspeech/v1beta/jobs" \
@@ -69,7 +83,8 @@ After sending this request to the API you will get a response body with the foll
 {
   "id": "111111",
   "status": "in_progress",
-  "created_on": "2018-05-05T23:23:22.29Z"
+  "created_on": "2018-05-05T23:23:22.29Z",
+  "metadata": "This is a sample submit jobs option"
 }
 ```
 
@@ -86,4 +101,74 @@ $ curl -X GET "https://api.rev.ai/revspeech/v1beta/jobs/{id}" \
 	-H "Authorization: Bearer <api_key>"
 ```
 
+After sending this request you will get the following response body:
+
+```json
+{
+    "id": "111111",
+    "created_on": "2019-01-25T20:40:03.49Z",
+    "completed_on": "2019-01-25T20:41:55.412Z",
+    "name": "FTC Sample 1 - Single.mp3",
+    "metadata": "This is a sample submit jobs option",
+    "media_url": "https://support.rev.com/hc/en-us/article_attachments/200043975/FTC_Sample_1_-_Single.mp3",
+    "status": "transcribed",
+    "duration_seconds": 107
+}
+```
+
 #### Getting your transcripts
+
+When a job object has a returned status of "transcribed" it is now ready for you to fetch the completed transcript.
+
+You will need your order ID and the transcript encoding you would like to receive. The order ID can be found in the response bodies from the previous steps. 
+
+**Transcript Encodings:**
+
+*We currently support two transcript encodings: "text/plain" or "application/vnd.rev.transcript.v1.0+json" for a Rev.ai Transcript.*
+
+*You can read more about the [Rev.ai Transcript here](https://docs.rev.ai/en/latest/models/transcript.html#transcript-model)* *and you can see an example of the text/plain version of transcripts [here](https://docs.rev.ai/en/latest/endpoints/transcript.html) under Responses*
+
+For our example we will use the Rev.ai Transcript. Your chosen transcript type will be passed in as an Accept header on your request as shown below.
+
+```sh
+curl -X GET \
+  https://api.rev.ai/revspeech/v1beta/jobs/111111/transcript \
+  -H 'accept: application/vnd.rev.transcript.v1.0+json' \
+  -H 'authorization: Bearer <api_key>'
+```
+
+Once you send the above request you will receive the following response. This response has been truncated to only show the general form of the response you will receive. s
+
+```json
+{
+    "monologues": [
+        {
+            "speaker": 0,
+            "elements": [
+                {
+                    "type": "text",
+                    "value": "Hi",
+                    "ts": 0.26999999999999996,
+                    "end_ts": 0.48,
+                    "confidence": 1
+                },
+                {
+                    "type": "punct",
+                    "value": ", "
+                },
+                {
+                    "type": "text",
+                    "value": "my",
+                    "ts": 0.51,
+                    "end_ts": 0.65999999999999992,
+                    "confidence": 1
+                },
+                {
+                    "type": "punct",
+                    "value": " "
+                },
+...
+```
+
+
+
