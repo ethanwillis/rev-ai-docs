@@ -186,7 +186,7 @@ You will need your order ID and the transcript encoding you would like to receiv
 For our example we will use the Rev.ai Transcript. Your chosen transcript type will be passed in as an Accept header on your request as shown below.
 
 ```sh
-curl -X GET \
+$ curl -X GET \
   "https://api.rev.ai/revspeech/v1beta/jobs/$rev_job_id/transcript" \
   -H "accept: application/vnd.rev.transcript.v1.0+json" \
   -H "authorization: Bearer $api_key"
