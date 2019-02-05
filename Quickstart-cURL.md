@@ -4,7 +4,7 @@
 
 1. Signup for an account [here](https://www.rev.ai/account/auth/signup)
 2. Generate API keys on your [account settings](https://www.rev.ai/settings) page.
-3. Install curl, postman, python, or node.js on your machine.
+3. Install [curl (if you have windows)](https://stackoverflow.com/questions/9507353/how-do-i-install-and-use-curl-on-windows) on your machine.
 
 
 
