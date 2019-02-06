@@ -153,7 +153,7 @@ Taking your "id" from the response after placing your order you will fire off a 
    	-H "Authorization: Bearer $api_key"
    ```
 
-3.  After sending this request you will get the following response body:
+3.  After sending this request you will get a similar response to the following response body:
 
    *note: If you submitted a local file the response body will vary in that it doesn't have a media_url field.*
 
@@ -173,7 +173,7 @@ Taking your "id" from the response after placing your order you will fire off a 
 
 ### Getting your transcripts
 
-When a job object has a returned status of "transcribed" it is now ready for you to fetch the completed transcript.
+When a job object has a returned status of "transcribed" it is now ready for you to fetch the completed transcript. It should take no more than a few minutes for the file to finish transcribing.
 
 You will need your order ID and the transcript encoding you would like to receive. The order ID can be found in the response bodies from the previous steps. 
 
