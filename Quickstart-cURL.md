@@ -70,7 +70,7 @@ Placing a new order using a URL to an existing piece of media just requires spec
 1. Set your variables on the CLI that haven't been set already.
 
    ```sh
-   $ api_key="02H33m_P86---qBGsXE-mvt29WKWx1BUYYq17PNkpG7kYjfzs5BpGa45Kf4peNF9xio5Tb50f7HZbdQnezGBnDzsCfAZk" 
+   $ api_key="YOUR API KEY HERE" 
    $ media_url="https://support.rev.com/hc/en-us/article_attachments/200043975/FTC_Sample_1_-_Single.mp3"
    $ metadata="This is a sample submit jobs option"
    ```
