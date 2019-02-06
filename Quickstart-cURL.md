@@ -192,7 +192,7 @@ $ curl -X GET \
   -H "authorization: Bearer $api_key"
 ```
 
-Once you send the above request you will receive the following response. This response has been truncated to only show the general form of the response you will receive. s
+Once you send the above request you will receive the following response. This response has been truncated to only show the general form of the response you will receive.
 
 ```json
 {
