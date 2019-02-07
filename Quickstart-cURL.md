@@ -70,7 +70,7 @@ Placing a new order using a URL to an existing piece of media just requires spec
 1. Set your variables on the CLI that haven't been set already.
 
    ```sh
-   $ api_key="02H33m_P86---qBGsXE-mvt29WKWx1BUYYq17PNkpG7kYjfzs5BpGa45Kf4peNF9xio5Tb50f7HZbdQnezGBnDzsCfAZk" 
+   $ api_key="YOUR API KEY HERE" 
    $ media_url="https://support.rev.com/hc/en-us/article_attachments/200043975/FTC_Sample_1_-_Single.mp3"
    $ metadata="This is a sample submit jobs option"
    ```
@@ -153,7 +153,7 @@ Taking your "id" from the response after placing your order you will fire off a 
    	-H "Authorization: Bearer $api_key"
    ```
 
-3.  After sending this request you will get the following response body:
+3.  After sending this request you will get a similar response to the following response body:
 
    *note: If you submitted a local file the response body will vary in that it doesn't have a media_url field.*
 
@@ -173,7 +173,7 @@ Taking your "id" from the response after placing your order you will fire off a 
 
 ### Getting your transcripts
 
-When a job object has a returned status of "transcribed" it is now ready for you to fetch the completed transcript.
+When a job object has a returned status of "transcribed" it is now ready for you to fetch the completed transcript. It should take no more than a few minutes for the file to finish transcribing.
 
 You will need your order ID and the transcript encoding you would like to receive. The order ID can be found in the response bodies from the previous steps. 
 
@@ -192,7 +192,7 @@ $ curl -X GET \
   -H "authorization: Bearer $api_key"
 ```
 
-Once you send the above request you will receive the following response. This response has been truncated to only show the general form of the response you will receive. s
+Once you send the above request you will receive the following response. This response has been truncated to only show the general form of the response you will receive.
 
 ```json
 {
