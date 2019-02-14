@@ -105,6 +105,7 @@ Once you send the above request you will receive the following response. This re
                 {
                     "type": "punct",
                     "value": " "
-                },
-...
+                }
+        }
+}
 ```
