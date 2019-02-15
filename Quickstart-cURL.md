@@ -56,7 +56,7 @@ If you have a file on your local machine that you would like to be processed you
 
 ### Getting your transcripts
 
-It should take no more than a few minutes for the file to finish transcribing. You can check the status of your order on the [recent jobs dashboard](https://stage.rev.ai/jobs) or programatically via [request](https://www.rev.ai/docs#operation/GetJobById) or [webhook](https://www.rev.ai/docs#section/Webhooks).
+It should take no more than a few minutes for the file to finish transcribing. You can check the status of your order on the [recent jobs dashboard](https://rev.ai/jobs) or programatically via [request](https://www.rev.ai/docs#operation/GetJobById) or [webhook](https://www.rev.ai/docs#section/Webhooks).
 
 You will need your job ID and the transcript encoding you would like to receive. The job ID can be found in the response bodies from the previous steps. 
 
