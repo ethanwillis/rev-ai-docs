@@ -4,7 +4,7 @@
 
 1. Signup for an account [here](https://www.rev.ai/account/auth/signup)
 2. Generate API keys on your [account settings](https://www.rev.ai/settings) page.
-3. Install [curl (if you have windows)](https://stackoverflow.com/questions/9507353/how-do-i-install-and-use-curl-on-windows) on your machine. cURL is not necessary to use the API just for this quickstart.
+3. [Install cURL (if you use windows)](https://stackoverflow.com/questions/9507353/how-do-i-install-and-use-curl-on-windows) on your machine. cURL is not necessary to use the API just for this quickstart.
 
 ## Introduction
 
@@ -16,7 +16,7 @@ Once you've completed this guide you should know how to do the following:
 
 ### Submitting a job
 
-There are two ways of placing a new Job. The first is via uploading a file from the local filesystem. The second is via fetching a media file from a publicly accessible URL. In both cases we are using an MP3 file for the example, however we support many media filetypes. For an exhaustive list of supported file types & codecs please see this [reference.](supported_codecs.md). In this quickstart, we'll just cover uploading a local file.
+There are two ways of placing a new Job. The first is via uploading a file from the local filesystem. The second is via fetching a media file from a publicly accessible URL. In both cases we are using an MP3 file for the example, however we support many media filetypes. For an exhaustive list of supported file types & codecs please see this [reference](supported_codecs.md). In this quickstart, we'll just cover uploading a local file.
 
 #### Submitting a local file for transcription
 
