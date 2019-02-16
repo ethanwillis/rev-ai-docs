@@ -25,16 +25,16 @@ Find an audio file on your local machine that you'd like to transcribe. If you d
 1. Open your terminal window and set your variables in the terminal window
 
    ```sh
-    $ API_KEY="your api key goes here" 
-    $ MEDIA_FILE_PATH="/path/to/media_file.mp3"
-    $ MEDIA_FILE_TYPE="audio/mp3"
-    $ METADATA="This is a sample submit jobs option"
+    API_KEY="your api key goes here" 
+    MEDIA_FILE_PATH="/path/to/media_file.mp3"
+    MEDIA_FILE_TYPE="audio/mp3"
+    METADATA="This is a sample submit jobs option"
    ```
 
 2. Make your request
 
    ```sh
-   $ curl -X POST "https://api.rev.ai/speechtotext/v1/jobs" \
+   curl -X POST "https://api.rev.ai/speechtotext/v1/jobs" \
    	-H "Authorization: Bearer $API_KEY" \
    	-H "Content-Type: multipart/form-data" \
        -F "media=@$MEDIA_FILE_PATH;type=$MEDIA_FILE_TYPE" \
@@ -67,8 +67,8 @@ You will need your job ID and the transcript encoding you would like to receive.
 For our example we will use the JSON transcript.
 
 ```sh
-$ REV_JOB_ID = "The id you got in the response from step 3 of submitting the file"
-$ curl -X GET \
+REV_JOB_ID = "The id you got in the response from step 3 of submitting the file"
+curl -X GET \
   "https://api.rev.ai/speechtotext/v1/jobs/$REV_JOB_ID/transcript" \
   -H "accept: application/vnd.rev.transcript.v1.0+json" \
   -H "authorization: Bearer $API_KEY"
