@@ -2,7 +2,7 @@
 
 ## Pre-requisites 
 
-1. Signup for an account [here](https://www.rev.ai/account/auth/signup)
+1. Sign up for an account [here](https://www.rev.ai/account/auth/signup)
 2. Generate API keys on your [account settings](https://www.rev.ai/settings) page.
 3. [Install cURL (if you use windows)](https://stackoverflow.com/questions/9507353/how-do-i-install-and-use-curl-on-windows) on your machine. cURL is not necessary to use the API just for this quickstart.
 
