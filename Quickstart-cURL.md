@@ -16,7 +16,7 @@ Once you've completed this guide you should know how to do the following:
 
 ### Submitting a job
 
-There are two ways of placing a new Job. The first is via uploading a file from the local filesystem. The second is via fetching a media file from a publicly accessible URL. In both cases we are using an MP3 file for the example, however we support many media filetypes. For an exhaustive list of supported file types & codecs please see this [reference](supported_codecs.md). In this quickstart, we'll just cover uploading a local file.
+There are two ways of placing a new Job. The first is via uploading a file from the local filesystem. The second is via fetching a media file from a publicly accessible URL. We are using an MP3 file for the example, however we support many media filetypes. For an exhaustive list of supported file types & codecs please see this [reference](supported_codecs.md). In this quickstart, we'll just cover uploading a local file.
 
 #### Submitting a local file for transcription
 
