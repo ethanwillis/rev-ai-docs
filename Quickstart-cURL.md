@@ -20,7 +20,7 @@ There are two ways of placing a new Job. The first is via uploading a file from 
 
 #### Submitting a local file for transcription
 
-If you have a file on your local machine that you would like to be processed you can use cURL with the -f flag. If you don't have one, you can download [this file](https://support.rev.com/hc/en-us/article_attachments/200043975/FTC_Sample_1_-_Single.mp3\) Replace /path/to/media_file.mp3 with the location of the file on your local computer that you would like to send.
+Find an audio file on your local machine that you'd like to transcribe. If you don't have one, you can download [this file](https://support.rev.com/hc/en-us/article_attachments/200043975/FTC_Sample_1_-_Single.mp3) Replace /path/to/media_file.mp3 with the location of the file on your computer that you would like to send.
 
 1. Open your terminal window and set your variables in the terminal window
 
@@ -41,7 +41,7 @@ If you have a file on your local machine that you would like to be processed you
        -F "options={\"metadata\":\"$METADATA\"}"
    ```
 
-3. After sending this request to the API you will get a response body with the following format:
+3. After sending this request to the API you will get a response body similar to the following:
 
    ```json
    {
@@ -58,13 +58,13 @@ If you have a file on your local machine that you would like to be processed you
 
 It should take no more than a few minutes for the file to finish transcribing. You can check the status of your order on the [recent jobs dashboard](https://rev.ai/jobs) or programatically via [request](https://www.rev.ai/docs#operation/GetJobById) or [webhook](https://www.rev.ai/docs#section/Webhooks).
 
-You will need your job ID and the transcript encoding you would like to receive. The job ID can be found in the response bodies from the previous steps. 
+You will need your job ID and the transcript encoding you would like to receive. The job ID can be found in the response body from step 3 of the previous section. 
 
 **Transcript Encodings:**
 
-*We support returning the transcript as plain text or as a JSON document. The desired format is specified using the Accept header (text/plain for plaintext and application/vnd.rev.transcript.v1.0+json for JSON). You can read more about the [Rev.ai JSON transcript format here](https://www.rev.ai/docs#operation/GetTranscriptById)*
+*We support returning the transcript as plain text or as a JSON document. The desired format is specified using the Accept header (text/plain for plaintext and application/vnd.rev.transcript.v1.0+json for JSON). You can read more about the [Rev.ai JSON transcript format here](https://www.rev.ai/docs#operation/GetTranscriptById).*
 
-For our example we will use the json transcript.
+For our example we will use the JSON transcript.
 
 ```sh
 $ REV_JOB_ID = "The id you got in the response from step 3 of submitting the file"
@@ -107,3 +107,5 @@ Once you send the above request you will receive the following response. This re
         }]
 }
 ```
+
+Congrats! You've succesfully submitted a transcription job to [Rev.ai](https://www.rev.ai).
