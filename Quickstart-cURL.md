@@ -108,4 +108,4 @@ Once you send the above request you will receive the following response. This re
 }
 ```
 
-Congrats! You've succesfully submitted a transcription job to [Rev.ai](https://www.rev.ai).
+Congrats! You've succesfully submitted and retrieved a transcription job to [Rev.ai](https://www.rev.ai).
