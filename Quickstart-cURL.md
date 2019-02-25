@@ -25,7 +25,7 @@ Find an audio file on your local machine that you'd like to transcribe. If you d
 1. Open your terminal window and set your variables in the terminal window
 
    ```sh
-    API_KEY="your access token goes here" 
+    REV_ACCESS_TOKEN="your access token goes here" 
     MEDIA_FILE_PATH="/path/to/media_file.mp3"
     MEDIA_FILE_TYPE="audio/mp3"
     METADATA="This is a sample submit jobs option"
@@ -35,7 +35,7 @@ Find an audio file on your local machine that you'd like to transcribe. If you d
 
    ```sh
    curl -X POST "https://api.rev.ai/speechtotext/v1/jobs" \
-    -H "Authorization: Bearer $API_KEY" \
+    -H "Authorization: Bearer $REV_ACCESS_TOKEN" \
     -H "Content-Type: multipart/form-data" \
        -F "media=@$MEDIA_FILE_PATH;type=$MEDIA_FILE_TYPE" \
        -F "options={\"metadata\":\"$METADATA\"}"
@@ -71,7 +71,7 @@ REV_JOB_ID = "The id you got in the response from step 3 of submitting the file"
 curl -X GET \
   "https://api.rev.ai/speechtotext/v1/jobs/$REV_JOB_ID/transcript" \
   -H "accept: application/vnd.rev.transcript.v1.0+json" \
-  -H "authorization: Bearer $API_KEY"
+  -H "authorization: Bearer $REV_ACCESS_TOKEN"
 ```
 
 Once you send the above request you will receive the following response. This response has been truncated to only show the general form of the response you will receive.
