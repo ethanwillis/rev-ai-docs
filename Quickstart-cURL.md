@@ -1,10 +1,10 @@
-# Getting Started with Rev.AI
+# Getting Started with Rev.AI Using cURL
 
 ## Pre-requisites 
 
 1. Sign up for an account [here](https://www.rev.ai/account/auth/signup)
-2. Generate your API key on your [account settings](https://www.rev.ai/settings) page.
-3. [Install cURL (if you use windows)](https://stackoverflow.com/questions/9507353/how-do-i-install-and-use-curl-on-windows) on your machine. cURL is not necessary to use the API just for this quickstart.
+2. Generate your access token on your [account settings](https://www.rev.ai/settings) page.
+3. [Install cURL (if you use windows)](https://stackoverflow.com/questions/9507353/how-do-i-install-and-use-curl-on-windows) on your machine.
 
 ## Introduction
 
@@ -25,7 +25,7 @@ Find an audio file on your local machine that you'd like to transcribe. If you d
 1. Open your terminal window and set your variables in the terminal window
 
    ```sh
-    API_KEY="your api key goes here" 
+    API_KEY="your access token goes here" 
     MEDIA_FILE_PATH="/path/to/media_file.mp3"
     MEDIA_FILE_TYPE="audio/mp3"
     METADATA="This is a sample submit jobs option"
@@ -35,8 +35,8 @@ Find an audio file on your local machine that you'd like to transcribe. If you d
 
    ```sh
    curl -X POST "https://api.rev.ai/speechtotext/v1/jobs" \
-   	-H "Authorization: Bearer $API_KEY" \
-   	-H "Content-Type: multipart/form-data" \
+    -H "Authorization: Bearer $API_KEY" \
+    -H "Content-Type: multipart/form-data" \
        -F "media=@$MEDIA_FILE_PATH;type=$MEDIA_FILE_TYPE" \
        -F "options={\"metadata\":\"$METADATA\"}"
    ```
@@ -58,7 +58,7 @@ Find an audio file on your local machine that you'd like to transcribe. If you d
 
 It should take no more than a few minutes for the file to finish transcribing. You can check the status of your order on the [recent jobs dashboard](https://rev.ai/jobs) or programatically via [request](https://www.rev.ai/docs#operation/GetJobById) or [webhook](https://www.rev.ai/docs#section/Webhooks).
 
-You will need your job ID and the transcript encoding you would like to receive. The job ID can be found in the response body from step 3 of the previous section. 
+You will need your job ID and the transcript encoding (see below) you would like to receive. The job ID can be found in the response body from step 3 of the previous section under "id". 
 
 **Transcript Encodings:**
 
