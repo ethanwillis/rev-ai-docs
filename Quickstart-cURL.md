@@ -16,13 +16,13 @@ Once you've completed this guide you should know how to do the following:
 
 ### Submitting a job
 
-There are two ways of placing a new Job. The first is via uploading a file from the local filesystem. The second is via fetching a media file from a publicly accessible URL. We are using an MP3 file for the example, however we support many media filetypes. For an exhaustive list of supported file types & codecs please see this [reference](supported_codecs.md). In this quickstart, we'll just cover uploading a local file.
+There are two ways of placing a new Job. The first is via uploading a file from the local filesystem. The second is via fetching a media file from a publicly accessible URL. In this quickstart, we'll just cover uploading a local file. We are using an MP3 file for the example, however we support many media filetypes. For an exhaustive list of supported file types & codecs please see this [reference](supported_codecs.md). 
 
 #### Submitting a local file for transcription
 
 Find an audio file on your local machine that you'd like to transcribe. If you don't have one, you can download [this file](https://support.rev.com/hc/en-us/article_attachments/200043975/FTC_Sample_1_-_Single.mp3) Replace /path/to/media_file.mp3 with the location of the file on your computer that you would like to send.
 
-1. Open your terminal window and set your variables in the terminal window
+1. Open your terminal window and set your variables
 
    ```sh
     REV_ACCESS_TOKEN="your access token goes here" 
@@ -41,7 +41,7 @@ Find an audio file on your local machine that you'd like to transcribe. If you d
        -F "options={\"metadata\":\"$METADATA\"}"
    ```
 
-3. After sending this request to the API you will get a response body similar to the following:
+3. After sending this request to the API you will get a response body similar to the following (take note of the ID):
 
    ```json
    {
